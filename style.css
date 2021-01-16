@@ -1,8 +1,23 @@
-@charset "utf-8";
+header {
+  height: 60px;
+}
 
-h1 {
+header ul {
+  display: flex;
+  margin: 10px;
+  padding: 5px;
+}
+
+header ul a {
+  color: #000;
+}
+
+header ul a::before {
+  content: '.';
   color: #f00;
 }
-.test{
-  color: #0f0;
+
+header ul a:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }

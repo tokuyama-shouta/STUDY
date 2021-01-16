@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+
+
+//ネスト
+header {
+  height: 60px;
+  ul {
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    a {
+      color: #000;
+      &::before{
+        content:'.';
+        color: #f00;
+      }
+      &:hover{
+        cursor: pointer;
+        opacity: 0.7;
+      }
+    }
+    
+  }
+}
