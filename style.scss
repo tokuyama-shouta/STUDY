@@ -177,83 +177,91 @@
 //   @include buttonStyle("right");
 // }
 
-ul{
-  list-style:none;
+// ul{
+//   list-style:none;
+// }
+
+// .boxes {
+//   li{
+//     width: 100px;
+//     height: 100px;
+//     background-color: orange;
+//     border:1px solid #333;
+//     @for $i from 2 through 5 {
+//       &:nth-of-type(#{$i}) {
+//         transform: translateX(($i - 1) * 20px);
+//         background-color:adjust-hue(orange,($i - 1) * 20px);
+//       }
+//     }
+//   }
+// }
+
+// .boxes2{
+//   display: flex;
+//   margin: 100px 0;
+//   li{
+//     $startColor: #ddd;
+//     width: 100px;
+//     height: 100px;
+//     background-color: #eee;
+//     border: 1px solid #aaa;
+//     &:not(:first-of-type){
+//       margin-left: 10px;
+//     }
+//     @for $i from 2 through 10 {
+//       &:nth-of-type(#{$i}){
+//         background-color: darken($startColor, 5% * $i);
+//         @if $i % 2 == 0 {
+//           transform: translateY($i * 10px);
+//         }@else{
+//           transform: translateY($i * -10px);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @keyframes fadeIn {
+//   0%{
+//     transform: translateY(30px);
+//     opacity: 0;
+//   }
+
+// }
+
+// .boxes3{
+//   margin: 300px 0;
+//   display: flex;
+//   li {
+//     width: 100px;
+//     height: 100px;
+//     background-color: #eee;
+//     border: 1px solid #aaa;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     animation: fadeIn 2s backwards;
+//     &:not(:first-of-type){
+//       margin-left: 10px;
+//     }
+//     @for $i from 1 through 5 {
+//       &:nth-of-type(#{$i}){
+//         animation-delay: .2s * $i;
+//         &::before{
+//           content: '#{$i}';
+//           font-size: 20px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@function changePercent($value: 1){
+  @return $value * 100%
 }
-
-.boxes {
-  li{
-    width: 100px;
-    height: 100px;
-    background-color: orange;
-    border:1px solid #333;
-    @for $i from 2 through 5 {
-      &:nth-of-type(#{$i}) {
-        transform: translateX(($i - 1) * 20px);
-        background-color:adjust-hue(orange,($i - 1) * 20px);
-      }
-    }
-  }
-}
-
-.boxes2{
-  display: flex;
-  margin: 100px 0;
-  li{
-    $startColor: #ddd;
-    width: 100px;
-    height: 100px;
-    background-color: #eee;
-    border: 1px solid #aaa;
-    &:not(:first-of-type){
-      margin-left: 10px;
-    }
-    @for $i from 2 through 10 {
-      &:nth-of-type(#{$i}){
-        background-color: darken($startColor, 5% * $i);
-        @if $i % 2 == 0 {
-          transform: translateY($i * 10px);
-        }@else{
-          transform: translateY($i * -10px);
-        }
-      }
-    }
-  }
-}
-
-@keyframes fadeIn {
-  0%{
-    transform: translateY(30px);
-    opacity: 0;
-  }
-
-}
-
-.boxes3{
-  margin: 300px 0;
-  display: flex;
-  li {
-    width: 100px;
-    height: 100px;
-    background-color: #eee;
-    border: 1px solid #aaa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 2s backwards;
-    &:not(:first-of-type){
-      margin-left: 10px;
-    }
-    @for $i from 1 through 5 {
-      &:nth-of-type(#{$i}){
-        animation-delay: .2s * $i;
-        &::before{
-          content: '#{$i}';
-          font-size: 20px;
-        }
-      }
-    }
-  }
+ 
+.test {
+  color: changePercent(0.255);
 }
 
 
