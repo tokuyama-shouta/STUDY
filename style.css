@@ -1,47 +1,12 @@
-.contact a {
-  background-color: blue;
-  color: #fff;
+.button {
+  width: 300px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  height: 80px;
-  width: 180px;
-}
-
-.buttons .modalopen a {
-  background-color: green;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  height: 80px;
-  width: 200px;
-}
-
-.buttons .share a {
-  background-color: red;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  height: 80px;
-  width: 200px;
-}
-
-header {
-  height: 60px;
-}
-
-header nav ul li a {
-  background-color: #333;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  height: 80px;
-  width: 200px;
+  font-size: 20px;
+  background-image: linear-gradient(#0f0, #00ffd5);
+  box-shadow: 5px 5px 3px #ccccff;
+  cursor: pointer;
 }
