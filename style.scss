@@ -29,34 +29,80 @@
 
 //変数について
 
-$darkBlue: "#1234ab";
-$headerHeight: 60px;
-$borderStyle: 3px solid #555;
+// $darkBlue: "#1234ab";
+// $headerHeight: 60px;
+// $borderStyle: 3px solid #555;
 
-.test{
-  color:$darkBlue;
-  li{
-    border: 1px solid $darkBlue;
-    p {
-      background-color:  $darkBlue;
+// .test{
+//   color:$darkBlue;
+//   li{
+//     border: 1px solid $darkBlue;
+//     p {
+//       background-color:  $darkBlue;
+//     }
+//   }
+//   a {
+//     color: #000;
+//   }
+// }
+
+// header {
+//   height: $headerHeight;
+//   position:fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   background-color: #fff;
+//   border-bottom: $borderStyle;
+// }
+
+// main{
+//   margin-top: $headerHeight + 20px;
+//   padding: 20px;
+// }
+
+// mixinについて
+
+@mixin buttonStyle($color: blue, $height: 80px, $width: 200px) {
+  background-color: $color;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: $height;
+  width: $width;
+}
+
+.contact {
+  a{
+    @include buttonStyle($width: 180px);
+  }
+}
+
+.buttons{
+  .modalopen {
+    a {
+      @include buttonStyle(green);
     }
   }
-  a {
-    color: #000;
+  .share{
+    a{
+      @include buttonStyle(red);
+    }
   }
 }
 
 header {
-  height: $headerHeight;
-  position:fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border-bottom: $borderStyle;
+  height: 60px;
+  nav{
+    ul{
+      li{
+        a{
+          @include buttonStyle(#333);
+        }
+      }
+    }
+  }
 }
 
-main{
-  margin-top: $headerHeight + 20px;
-  padding: 20px;
-}
