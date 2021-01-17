@@ -3,23 +3,60 @@
 
 
 //ネスト
-header {
-  height: 60px;
-  ul {
-    display: flex;
-    margin: 10px;
-    padding: 5px;
-    a {
-      color: #000;
-      &::before{
-        content:'.';
-        color: #f00;
-      }
-      &:hover{
-        cursor: pointer;
-        opacity: 0.7;
-      }
-    }
+// header {
+//   height: 60px;
+//   ul {
+//     display: flex;
+//     margin: 10px;
+//     padding: 5px;
+//     a {
+//       color: #000;
+//       &::before{
+//         content:'.';
+//         color: #f00;
+//       }
+//       &:hover{
+//         cursor: pointer;
+//         opacity: 0.7;
+//       }
+//     }
     
+//   }
+// }
+
+
+
+
+//変数について
+
+$darkBlue: "#1234ab";
+$headerHeight: 60px;
+$borderStyle: 3px solid #555;
+
+.test{
+  color:$darkBlue;
+  li{
+    border: 1px solid $darkBlue;
+    p {
+      background-color:  $darkBlue;
+    }
   }
+  a {
+    color: #000;
+  }
+}
+
+header {
+  height: $headerHeight;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: $borderStyle;
+}
+
+main{
+  margin-top: $headerHeight + 20px;
+  padding: 20px;
 }

@@ -1,23 +1,30 @@
-header {
-  height: 60px;
+.test {
+  color: "#1234ab";
 }
 
-header ul {
-  display: flex;
-  margin: 10px;
-  padding: 5px;
+.test li {
+  border: 1px solid "#1234ab";
 }
 
-header ul a {
+.test li p {
+  background-color: "#1234ab";
+}
+
+.test a {
   color: #000;
 }
 
-header ul a::before {
-  content: '.';
-  color: #f00;
+header {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 3px solid #555;
 }
 
-header ul a:hover {
-  cursor: pointer;
-  opacity: 0.7;
+main {
+  margin-top: 80px;
+  padding: 20px;
 }
