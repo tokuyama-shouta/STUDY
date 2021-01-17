@@ -125,56 +125,136 @@
 // }
 
 
-a{
-  text-decoration: none;
-}
+// a{
+//   text-decoration: none;
+// }
 
-@mixin arrowStyle{
-  position:absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: normal;
-}
+// @mixin arrowStyle{
+//   position:absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   font-weight: normal;
+// }
 
-@mixin buttonStyle($direction: "left"){
-  width: 200px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: blue;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3%;
-  position: relative;
+// @mixin buttonStyle($direction: "left"){
+//   width: 200px;
+//   height: 40px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: blue;
+//   color: #fff;
+//   font-weight: bold;
+//   border-radius: 5px;
+//   transition: 0.3%;
+//   position: relative;
   
-  @if $direction == "left"{
-    &::before{
-      content: '<-';
-      right: 20px;
-      @include arrowStyle
-    }
+//   @if $direction == "left"{
+//     &::before{
+//       content: '<-';
+//       right: 20px;
+//       @include arrowStyle
+//     }
 
-  } @else if $direction == "right" {
-    &::after{
-      content: '->';
-      left: 20px;
-      font-weight: normal;
-      @include arrowStyle
+//   } @else if $direction == "right" {
+//     &::after{
+//       content: '->';
+//       left: 20px;
+//       font-weight: normal;
+//       @include arrowStyle
+//     }
+//   }
+//   &:hover{
+//     opacity: 0.7;
+//   }
+
+// }
+
+// .button{
+//   @include buttonStyle;
+// }
+// .button2{
+//   @include buttonStyle("right");
+// }
+
+ul{
+  list-style:none;
+}
+
+.boxes {
+  li{
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border:1px solid #333;
+    @for $i from 2 through 5 {
+      &:nth-of-type(#{$i}) {
+        transform: translateX(($i - 1) * 20px);
+        background-color:adjust-hue(orange,($i - 1) * 20px);
+      }
     }
   }
-  &:hover{
-    opacity: 0.7;
+}
+
+.boxes2{
+  display: flex;
+  margin: 100px 0;
+  li{
+    $startColor: #ddd;
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    &:not(:first-of-type){
+      margin-left: 10px;
+    }
+    @for $i from 2 through 10 {
+      &:nth-of-type(#{$i}){
+        background-color: darken($startColor, 5% * $i);
+        @if $i % 2 == 0 {
+          transform: translateY($i * 10px);
+        }@else{
+          transform: translateY($i * -10px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0%{
+    transform: translateY(30px);
+    opacity: 0;
   }
 
 }
 
-.button{
-  @include buttonStyle;
+.boxes3{
+  margin: 300px 0;
+  display: flex;
+  li {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border: 1px solid #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s backwards;
+    &:not(:first-of-type){
+      margin-left: 10px;
+    }
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}){
+        animation-delay: .2s * $i;
+        &::before{
+          content: '#{$i}';
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }
-.button2{
-  @include buttonStyle("right");
-}
+
 
 
